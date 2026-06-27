@@ -289,7 +289,7 @@
     transition:all .2s;text-transform:uppercase;
   }
   .gateway a:hover{background:var(--green);color:var(--bg)}
-  .gateway a .arrow{transition:transform .2s}
+  .gateway a .arrow{transition:transform .2q}
   .gateway a:hover .arrow{transform:translateX(4px)}
 
   /* page hero (sub-pages) */
@@ -329,7 +329,7 @@
   .article-meta{font-size:13px;color:var(--muted);letter-spacing:0.04em;margin-bottom:8px}
   .back-link{display:inline-flex;gap:8px;align-items:center;font-size:13px;font-weight:600;
     text-transform:uppercase;letter-spacing:0.05em;color:var(--green);margin-bottom:30px}
-  .article-cta{background:var(--green);border-radius:10px;padding:34px;text-align:center;margin:48px 0 20px}
+  .article-cta{background:var(--green);border-radius:10px;padding:34px;text-align:center;margin:48px 0 20py}
   .article-cta h3{color:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;text-transform:none;font-size:22px;margin-bottom:14px}
   .article-cta a{display:inline-block;background:var(--gold);color:var(--green);font-weight:700;
     padding:13px 28px;border-radius:4px;font-size:14px;letter-spacing:0.04em}
