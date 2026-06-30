@@ -46,29 +46,29 @@
     position:fixed;top:0;left:0;right:0;z-index:100;
     display:flex;align-items:center;justify-content:space-between;
     padding:16px 28px;
-    background:rgba(254,249,230,0.82);
+    background:rgba(27,40,12,0.96);
     backdrop-filter:blur(14px);
-    border-bottom:1px solid var(--line-soft);
+    border-bottom:1px solid rgba(248,171,53,0.12);
   }
   nav .brand{display:flex;align-items:center;gap:12px}
   nav .brand img{height:38px;width:auto}
   nav .brand span{
     font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;
-    text-transform:uppercase;letter-spacing:0.14em;font-size:14px;color:var(--green);
+    text-transform:uppercase;letter-spacing:0.14em;font-size:14px;color:#FEF9E6;
   }
   nav .links{display:flex;gap:30px;align-items:center}
   nav .links a{
     font-size:12px;letter-spacing:0.13em;text-transform:uppercase;
-    color:var(--muted);font-weight:400;transition:color .2s;
+    color:rgba(254,249,230,0.55);font-weight:400;transition:color .2s;
   }
-  nav .links a:hover{color:var(--cream)}
+  nav .links a:hover{color:#FEF9E6}
   nav .nav-cta{
-    background:var(--green);color:#FEF9E6!important;
+    background:var(--gold);color:var(--green)!important;
     padding:9px 18px;border-radius:2px;font-family:'Plus Jakarta Sans',sans-serif;
     font-weight:600;font-size:12px;letter-spacing:0.1em;
     transition:transform .15s, background .2s;
   }
-  nav .nav-cta:hover{background:#345A16;transform:translateY(-1px)}
+  nav .nav-cta:hover{background:#E09B1A;transform:translateY(-1px)}
   .menu-toggle{display:none;background:none;border:none;color:var(--cream);font-size:24px;cursor:pointer}
 
   /* ───────── HERO ───────── */
@@ -83,7 +83,8 @@
   .hero .stripes{position:absolute;inset:0;opacity:0.05;pointer-events:none;
     background-image:repeating-linear-gradient(115deg, var(--green) 0 2px, transparent 2px 26px);}
     .hero-mark{height:112px;width:auto;margin-bottom:28px;
-    animation:rise .8s ease both;}
+    animation:rise .8s ease both;
+    filter:drop-shadow(0 4px 28px rgba(0,0,0,0.25));}
   .eyebrow{
     display:inline-block;font-family:'Plus Jakarta Sans',sans-serif;font-weight:500;
     font-size:12.5px;letter-spacing:0.32em;text-transform:uppercase;
