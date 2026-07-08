@@ -466,3 +466,28 @@ nav .brand img{filter:drop-shadow(0 2px 8px rgba(0,0,0,0.45))}
   .foot-bottom{flex-direction:column;gap:6px;text-align:center;align-items:center}
   .gateway a{font-size:12.5px;padding:12px 20px}
 }
+
+
+/* Studio interior strip */
+.studio-strip{margin-top:48px}
+.studio-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.studio-photo{aspect-ratio:4/5;overflow:hidden;border-radius:4px;background:rgba(0,0,0,0.2)}
+.studio-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease}
+.studio-photo:hover img{transform:scale(1.04)}
+
+/* Happy clients section */
+.happy-clients{padding:80px 0}
+.client-photos{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:32px}
+.client-photo{aspect-ratio:3/4;overflow:hidden;border-radius:4px;background:rgba(0,0,0,0.2)}
+.client-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease}
+.client-photo:hover img{transform:scale(1.04)}
+
+@media(max-width:860px){
+.studio-photos{grid-template-columns:repeat(3,1fr);gap:8px}
+.client-photos{grid-template-columns:repeat(3,1fr);gap:8px}
+}
+@media(max-width:640px){
+.studio-photos{grid-template-columns:repeat(2,1fr);gap:6px}
+.studio-photo{aspect-ratio:3/4}
+.client-photos{grid-template-columns:repeat(2,1fr);gap:6px}
+}
