@@ -382,4 +382,9 @@ document.querySelectorAll('#navLinks a').forEach(function(a){
 a.addEventListener('click',function(){document.getElementById('navLinks').classList.remove('show')});
 });
 </script>
-</body></html>
+<script>
+document.querySelectorAll('.gallery .tile img').forEach(function(img){
+  function reveal(){img.classList.add('ts-loaded');img.closest('.tile').classList.add('ts-done');}
+  if(img.complete&&img.naturalWidth){reveal();}else{img.addEventListener('load',reveal);img.addEventListener('error',reveal);}
+});
+</script></body></html>
