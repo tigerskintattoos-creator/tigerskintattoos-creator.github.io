@@ -35,25 +35,129 @@
 </script>
 <link rel="stylesheet" href="style.css">
 <style>
-  .blog-post-wrap { max-width: 720px; margin: 0 auto; padding: 60px 24px 80px; }
-  .blog-meta-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold, #c9a84c); margin-bottom: 18px; }
-  .blog-post-title { font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 700; line-height: 1.2; color: var(--cream, #f5f0e8); margin-bottom: 16px; }
-  .blog-byline { font-size: 0.85rem; color: var(--muted, #999); margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-  .blog-byline strong { color: var(--cream, #f5f0e8); }
-  .blog-body p { font-size: 1.05rem; line-height: 1.85; color: rgba(245,240,232,0.85); margin-bottom: 24px; }
-  .blog-body p.lead { font-size: 1.2rem; line-height: 1.75; color: var(--cream, #f5f0e8); font-weight: 500; }
-  .blog-body .quote-block { border-left: 3px solid var(--gold, #c9a84c); padding: 8px 0 8px 24px; margin: 36px 0; font-size: 1.15rem; font-style: italic; color: var(--cream, #f5f0e8); line-height: 1.7; }
-  .blog-body .quote-block span { display: block; margin-top: 8px; font-size: 0.82rem; font-style: normal; color: var(--muted, #999); letter-spacing: 0.05em; }
-  .blog-photo-wrap { width: 100%; border-radius: 8px; overflow: hidden; margin: 40px 0; background: rgba(255,255,255,0.04); }
-  .blog-photo-wrap img { width: 100%; height: auto; display: block; border-radius: 8px; }
-  .blog-photo-caption { font-size: 0.8rem; color: var(--muted, #999); text-align: center; margin-top: -28px; margin-bottom: 36px; }
-  .blog-cta-box { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); border-radius: 10px; padding: 32px; margin-top: 56px; text-align: center; }
-  .blog-cta-box h3 { font-size: 1.1rem; color: var(--cream, #f5f0e8); margin-bottom: 10px; }
-  .blog-cta-box p { font-size: 0.92rem; color: rgba(245,240,232,0.7); margin-bottom: 20px; }
-  .blog-back-link { display: inline-block; margin-bottom: 40px; font-size: 0.85rem; color: var(--gold, #c9a84c); text-decoration: none; letter-spacing: 0.04em; }
+  .blog-post-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+  }
+  .blog-meta-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold, #c9a84c);
+    margin-bottom: 18px;
+  }
+  .blog-post-title {
+    font-size: clamp(1.75rem, 4vw, 2.6rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--cream, #f5f0e8);
+    margin-bottom: 16px;
+  }
+  .blog-byline {
+    font-size: 0.85rem;
+    color: var(--muted, #999);
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .blog-byline strong {
+    color: var(--cream, #f5f0e8);
+  }
+  .blog-body p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: rgba(245,240,232,0.85);
+    margin-bottom: 24px;
+  }
+  .blog-body p.lead {
+    font-size: 1.2rem;
+    line-height: 1.75;
+    color: var(--cream, #f5f0e8);
+    font-weight: 500;
+  }
+  .blog-body .quote-block {
+    border-left: 3px solid var(--gold, #c9a84c);
+    padding: 8px 0 8px 24px;
+    margin: 36px 0;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--cream, #f5f0e8);
+    line-height: 1.7;
+  }
+  .blog-body .quote-block span {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.82rem;
+    font-style: normal;
+    color: var(--muted, #999);
+    letter-spacing: 0.05em;
+  }
+  .blog-photo-wrap {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 40px 0;
+    background: rgba(255,255,255,0.04);
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .blog-photo-wrap img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+  .blog-photo-caption {
+    font-size: 0.8rem;
+    color: var(--muted, #999);
+    text-align: center;
+    margin-top: -28px;
+    margin-bottom: 36px;
+  }
+  .blog-cta-box {
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 10px;
+    padding: 32px;
+    margin-top: 56px;
+    text-align: center;
+  }
+  .blog-cta-box h3 {
+    font-size: 1.1rem;
+    color: var(--cream, #f5f0e8);
+    margin-bottom: 10px;
+  }
+  .blog-cta-box p {
+    font-size: 0.92rem;
+    color: rgba(245,240,232,0.7);
+    margin-bottom: 20px;
+  }
+  .blog-back-link {
+    display: inline-block;
+    margin-bottom: 40px;
+    font-size: 0.85rem;
+    color: var(--gold, #c9a84c);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
   .blog-back-link:hover { text-decoration: underline; }
-  .reel-note { background: rgba(255,255,255,0.04); border-radius: 8px; padding: 20px 24px; margin: 36px 0; font-size: 0.88rem; color: rgba(245,240,232,0.65); line-height: 1.6; }
-  .reel-note a { color: var(--gold, #c9a84c); }
+  .reel-note {
+    background: rgba(255,255,255,0.04);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 36px 0;
+    font-size: 0.88rem;
+    color: rgba(245,240,232,0.65);
+    line-height: 1.6;
+  }
+  .reel-note a {
+    color: var(--gold, #c9a84c);
+  }
 </style>
 </head>
 <body>
@@ -77,7 +181,7 @@
 <main>
   <div class="blog-post-wrap">
 
-    <a href="blog.html" class="blog-back-link">← Back to journal</a>
+    <a href="blog.html" class="blog-back-link">&larr; Back to journal</a>
 
     <span class="blog-meta-tag">From the Studio</span>
 
@@ -95,7 +199,12 @@
 
       <p>She walked in with Vedashree and Ajoba, her husband of many decades, who is 86. Two people who have seen more of life than most of us will ever see, walking into a tattoo studio in Naupada, Thane like it was the most natural thing in the world.</p>
 
-      <p>I asked Mai what she wanted. She told me her idea simply and clearly. No second-guessing. No "I'm not sure." She had been thinking about what she believed in, what meant enough to carry forever. I made the design. She looked at it, nodded, and sat down.</p>
+      <div class="blog-photo-wrap">
+        <img src="images/mai-story-1.jpg" alt="Mai and Ajoba holding hands at Tiger Skin Tattoos, Naupada Thane" loading="lazy">
+      </div>
+      <p class="blog-photo-caption">Ajoba holding Mai's hand in the studio. That look on his face.</p>
+
+      <p>I asked Mai what she wanted. Om, she said. Of course she did. No second-guessing. No "I'm not sure." She knew exactly what she believed in and what was worth carrying forever. I drew it, she looked at it, nodded, and sat down.</p>
 
       <p>That's when we got nervous. Not her. Us.</p>
 
@@ -107,23 +216,28 @@
 
       <p>I was trying not to cry too, if I'm being honest.</p>
 
+      <div class="blog-photo-wrap">
+        <img src="images/mai-story-tattoo.jpg" alt="Om tattoo on Mai's wrist by Swarain Pawar, Tiger Skin Tattoos Thane" loading="lazy">
+      </div>
+      <p class="blog-photo-caption">Mai's Om. Her first and only tattoo, at 80. Clean, precise, exactly what she asked for.</p>
+
       <p>When it was done, both of them looked at me and Ajoba held his wife's hand and they both said it together.</p>
 
       <div class="quote-block">
         "Tumhch sagl changlch honar ahe. Just keep doing the good work."
-        <span>— Mai and Ajoba, Tiger Skin Tattoos, Naupada, Thane</span>
+        <span>&mdash; Mai and Ajoba, Tiger Skin Tattoos, Naupada, Thane</span>
       </div>
 
       <p>Everything good will happen for you. Just keep doing the good work.</p>
 
       <p>I've been tattooing for 8 years. I've done over 2,000 pieces. I've won national convention awards. I've built a studio I'm genuinely proud of in Naupada. But that moment, the two of them standing there blessing us, is one of the most meaningful things that has happened to me in this work.</p>
 
-      <p>Mai wasn't getting a tattoo because it was trendy. Not because her friends were doing it. She was 80 years old and she decided, at this point in her life, to do something entirely for herself. Something that reflected what she believed in. Something permanent. And she did it without fear, without hesitation, without a single complaint.</p>
+      <p>Mai wasn't getting a tattoo because it was trendy. Not because her friends were doing it. She was 80 years old and she decided, at this point in her life, to do something entirely for herself. Something that reflected what she believes in. Something permanent. And she did it without fear, without hesitation, without a single complaint.</p>
 
       <p>That's the thing about tattooing that people on the outside don't always see. It's not about being edgy or rebellious or young. It's about deciding what matters enough to carry forever. Mai knew what that was. She just needed someone to draw it.</p>
 
       <div class="reel-note">
-        We shared this moment on Instagram. The reel got close to a million views. People from all over commented with their own stories, their own grandparents, their own moments they wished they had captured. Something in Mai's decision touched something universal. You can find us at <a href="https://www.instagram.com/tigerskintattoos/" target="_blank" rel="noopener">@tigerskintattoos</a>.
+        We shared this moment on Instagram. The reel got close to a million views. People from all over commented with their own stories, their own grandparents, their own moments they wished they'd captured. Something in Mai's decision touched something universal. You can find us at <a href="https://www.instagram.com/tigerskintattoos/" target="_blank" rel="noopener">@tigerskintattoos</a>.
       </div>
 
       <p>But for me, the memory I carry isn't the view count.</p>
