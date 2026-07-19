@@ -26,7 +26,7 @@
     <a href="blog.html" style="color:var(--green)">Blog</a>
     <a class="nav-cta" href="index.html#book">Book Now</a>
   </div>
-  <button class="menu-toggle" id="mentToggle" aria-label="Menu">&#9776;</button>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu">&#9776;</button>
 </nav>
 
 <section class="page-hero" style="padding-bottom:30px">
@@ -123,7 +123,7 @@
 </footer>
 
 <script>
-  document.getElementById('mentToggle').addEventListener('click', function() {
+  document.getElementById('menuToggle').addEventListener('click', function() {
     document.getElementById('navLinks').classList.toggle('show');
   });
   document.querySelectorAll('#navLinks a').forEach(function(a) {
@@ -132,4 +132,5 @@
     });
   });
 </script>
+</body>
 </html>
