@@ -324,6 +324,7 @@
   /* article body */
   .article{max-width:720px;margin:0 auto;padding:56px 0 20px}
   .article p{font-size:16.5px;color:#3c4636;line-height:1.85;margin-bottom:22px}
+  .article h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;text-transform:none;font-size:20px;color:var(--green);margin:28px 0 10px;letter-spacing:-0.01em}
   .article h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;text-transform:none;
     font-size:26px;color:var(--green);margin:40px 0 16px;letter-spacing:-0.01em}
   .article ul{margin:0 0 22px 22px;color:#3c4636;font-size:16.5px;line-height:1.8}
