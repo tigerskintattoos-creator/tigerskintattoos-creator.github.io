@@ -225,6 +225,18 @@
     });
   });
 })();
+  // Auto-activate filter from URL ?cat= param
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var cat = params.get('cat');
+    if(cat){
+      var btn = document.querySelector('[data-filter="' + cat + '"]');
+      if(btn) btn.click();
+      // Scroll filter bar into view
+      var bar = document.querySelector('.filter-bar');
+      if(bar) bar.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  })();
 </script>
 <script>
 document.getElementById('menuToggle').addEventListener('click',function(){
@@ -233,6 +245,18 @@ document.getElementById('menuToggle').addEventListener('click',function(){
 document.querySelectorAll('#navLinks a').forEach(function(a){
   a.addEventListener('click',function(){document.getElementById('navLinks').classList.remove('show')});
 });
+  // Auto-activate filter from URL ?cat= param
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var cat = params.get('cat');
+    if(cat){
+      var btn = document.querySelector('[data-filter="' + cat + '"]');
+      if(btn) btn.click();
+      // Scroll filter bar into view
+      var bar = document.querySelector('.filter-bar');
+      if(bar) bar.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  })();
 </script>
 <script>
 document.querySelectorAll('.masonry .tile img').forEach(function(img){
@@ -241,6 +265,18 @@ document.querySelectorAll('.masonry .tile img').forEach(function(img){
   else img.addEventListener('load', done);
   img.addEventListener('error', done);
 });
+  // Auto-activate filter from URL ?cat= param
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var cat = params.get('cat');
+    if(cat){
+      var btn = document.querySelector('[data-filter="' + cat + '"]');
+      if(btn) btn.click();
+      // Scroll filter bar into view
+      var bar = document.querySelector('.filter-bar');
+      if(bar) bar.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  })();
 </script>
 </body>
 </html>
