@@ -6,14 +6,38 @@
 <link rel="apple-touch-icon" href="images/mark-gold.png.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Portfolio | Tiger Skin Tattoos Thane</title>
-<meta name="description" content="Browse custom tattoo work by Tiger Skin, a premium studio in Naupada, Thane. Realism, black & grey, colour, pet portraits, religious and fine line tattoos.">
+<meta name="description" content="Browse custom tattoo work by Tiger Skin, a premium studio in Naupada, Thane. Realism, black & grey, colour, pet portraits, religious, fine line and minimal tattoos.">
+<meta property="og:image" content="https://tigerskintattoos.com/images/realism-1.jpg.png">
 <link rel="canonical" href="https://tigerskintattoos.com/portfolio.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css?v=3">
-<meta property="og:image" content="https://tigerskintattoos.com/images/realism-1.jpg.png"></head>
-<body><nav>
+<style>
+.filter-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px}
+.filter-wrap::-webkit-scrollbar{display:none}
+.filters{display:flex;gap:8px;flex-wrap:nowrap;white-space:nowrap}
+.filter-btn{background:transparent;border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.55);padding:8px 18px;border-radius:100px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:.02em;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.filter-btn:hover{border-color:rgba(255,255,255,0.4);color:rgba(255,255,255,0.9)}
+.filter-btn.active{background:var(--green);border-color:var(--green);color:#000;font-weight:600}
+.masonry{columns:3 200px;gap:6px;margin-top:32px}
+@media(max-width:600px){.masonry{columns:2 140px;gap:4px}}
+.tile{break-inside:avoid;margin-bottom:6px;border-radius:4px;overflow:hidden;position:relative;cursor:pointer}
+@media(max-width:600px){.tile{margin-bottom:4px}}
+.tile img{display:block;width:100%;height:auto;transition:transform .4s ease,opacity .3s ease;opacity:0}
+.tile img.ts-loaded{opacity:1}
+.tile:hover img{transform:scale(1.05)}
+.tile .cap{position:absolute;bottom:0;left:0;right:0;padding:28px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,0.65));color:rgba(255,255,255,.85);font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;opacity:0;transition:opacity .2s}
+.tile:hover .cap{opacity:1}
+.tile.hide{display:none}
+.gallery-empty{display:none;text-align:center;padding:64px 0;color:rgba(255,255,255,.3);font-family:'Plus Jakarta Sans',sans-serif;font-size:14px}
+.gallery-empty.show{display:block}
+.ig-link{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.45);font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;text-decoration:none;border:1px solid rgba(255,255,255,.12);padding:10px 22px;border-radius:100px;transition:all .2s;margin-top:40px}
+.ig-link:hover{color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.3)}
+</style>
+</head>
+<body>
+<nav>
   <a class="brand" href="index.html">
     <img src="images/mark-gold.png.png" alt="Tiger Skin Tattoos" fetchpriority="high" decoding="async">
     <span>Tiger Skin</span>
@@ -25,102 +49,123 @@
     <a href="blog.html">Blog</a>
     <a class="nav-cta" href="index.html#book">Book Now</a>
   </div>
-  <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu">&#9776;</button>
 </nav>
+
 <section class="page-hero">
   <div class="wrap">
-    <span class="eyebrow">Selected Work · Naupada, Thane</span>
+    <span class="eyebrow">Selected Work &middot; Naupada, Thane</span>
     <h1>The <span class="g">portfolio.</span></h1>
-    <p>Browse our custom work by style. Every piece is designed from scratch. For the full, always-updated library, find us on Instagram.</p>
+    <p>Browse by style. Every piece is designed from scratch for the person wearing it. For the full, always-updated library, follow us on Instagram.</p>
   </div>
 </section>
-<section style="padding-top:48px">
+
+<section style="padding-top:40px;padding-bottom:80px">
   <div class="wrap">
-    <div class="filters">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="realism">Realism</button>
-      <button class="filter-btn" data-filter="blackgrey">Black & Grey</button>
-      <button class="filter-btn" data-filter="colour">Colour</button>
-      <button class="filter-btn" data-filter="pet">Pet Portraits</button>
-      <button class="filter-btn" data-filter="religious">Religious & Deity</button>
-      <button class="filter-btn" data-filter="fineline">Fine Line</button>
+
+    <div class="filter-wrap">
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="realism">Realism</button>
+        <button class="filter-btn" data-filter="blackgrey">Black &amp; Grey</button>
+        <button class="filter-btn" data-filter="colour">Colour</button>
+        <button class="filter-btn" data-filter="fineline">Fine Line</button>
+        <button class="filter-btn" data-filter="minimal">Minimal</button>
+        <button class="filter-btn" data-filter="religious">Religious &amp; Deity</button>
+        <button class="filter-btn" data-filter="pet">Pet Portraits</button>
+        <button class="filter-btn" data-filter="sleeve">Sleeve &amp; Large</button>
+      </div>
     </div>
-    <div class="gallery" id="gallery" style="margin-top:24px">
+
+    <div class="masonry" id="gallery">
+
       <div class="tile" data-cat="realism">
-        <img src="images/realism-1.jpg.png" alt="Realism tattoo in Thane by Tiger Skin" loading="eager" decoding="async" fetchpriority="high">
-        <div class="cap">Realism</div>
-      </div>
-      <div class="tile" data-cat="realism">
-        <img src="images/realism-2.jpg.jpg" alt="Realism tattoo in Thane by Tiger Skin" loading="eager" decoding="async" fetchpriority="high">
-        <div class="cap">Realism</div>
-      </div>
-      <div class="tile" data-cat="realism">
-        <img src="images/realism-3.jpg.png" alt="Realism tattoo in Thane by Tiger Skin" loading="eager" decoding="async" fetchpriority="high">
+        <img src="images/realism-1.jpg.png" alt="Realism tattoo Thane by Swarain Pawar Tiger Skin" loading="eager" decoding="async" fetchpriority="high">
         <div class="cap">Realism</div>
       </div>
       <div class="tile" data-cat="blackgrey">
-        <img src="images/blackgrey-1.jpg.png" alt="Black and Grey tattoo in Thane by Tiger Skin" loading="eager" decoding="async" fetchpriority="high">
+        <img src="images/blackgrey-1.jpg.png" alt="Black and grey tattoo Thane Tiger Skin" loading="eager" decoding="async" fetchpriority="high">
         <div class="cap">Black &amp; Grey</div>
+      </div>
+      <div class="tile" data-cat="colour">
+        <img src="images/colour-1.jpg.png" alt="Colour tattoo Thane by Tiger Skin" loading="eager" decoding="async" fetchpriority="high">
+        <div class="cap">Colour</div>
+      </div>
+      <div class="tile" data-cat="realism">
+        <img src="images/realism-2.jpg.jpg" alt="Realism portrait tattoo Naupada Thane" loading="lazy" decoding="async">
+        <div class="cap">Realism</div>
+      </div>
+      <div class="tile" data-cat="religious">
+        <img src="images/religious-1.jpg.png" alt="Mahadev Shiva tattoo Thane Tiger Skin" loading="lazy" decoding="async">
+        <div class="cap">Religious &amp; Deity</div>
+      </div>
+      <div class="tile" data-cat="pet">
+        <img src="images/pet-1.jpg.png" alt="Pet portrait tattoo Thane Tiger Skin" loading="lazy" decoding="async">
+        <div class="cap">Pet Portraits</div>
+      </div>
+      <div class="tile" data-cat="fineline">
+        <img src="images/fineline-1.jpg.png" alt="Fine line tattoo Thane Tiger Skin" loading="lazy" decoding="async">
+        <div class="cap">Fine Line</div>
       </div>
       <div class="tile" data-cat="blackgrey">
-        <img src="images/blackgrey-2.jpg.png" alt="Black and Grey tattoo in Thane by Tiger Skin" loading="eager" decoding="async">
+        <img src="images/blackgrey-2.jpg.png" alt="Black grey mandala tattoo Thane" loading="lazy" decoding="async">
         <div class="cap">Black &amp; Grey</div>
+      </div>
+      <div class="tile" data-cat="realism">
+        <img src="images/realism-3.jpg.png" alt="Realism tattoo sleeve Thane" loading="lazy" decoding="async">
+        <div class="cap">Realism</div>
+      </div>
+      <div class="tile" data-cat="colour">
+        <img src="images/colour-2.jpg.png" alt="Colour tattoo Naupada Thane" loading="lazy" decoding="async">
+        <div class="cap">Colour</div>
+      </div>
+      <div class="tile" data-cat="pet">
+        <img src="images/pet-2.jpg.png" alt="Dog portrait tattoo Thane" loading="lazy" decoding="async">
+        <div class="cap">Pet Portraits</div>
+      </div>
+      <div class="tile" data-cat="religious">
+        <img src="images/religious-2.jpg.png" alt="Ganesha tattoo Naupada Thane" loading="lazy" decoding="async">
+        <div class="cap">Religious &amp; Deity</div>
+      </div>
+      <div class="tile" data-cat="fineline">
+        <img src="images/fineline-2.jpg.png" alt="Fine line botanical tattoo Thane" loading="lazy" decoding="async">
+        <div class="cap">Fine Line</div>
       </div>
       <div class="tile" data-cat="blackgrey">
-        <img src="images/blackgrey-3.jpg.png" alt="Black and Grey tattoo in Thane by Tiger Skin" loading="eager" decoding="async">
+        <img src="images/blackgrey-3.jpg.png" alt="Black grey geometric tattoo Thane" loading="lazy" decoding="async">
         <div class="cap">Black &amp; Grey</div>
       </div>
       <div class="tile" data-cat="colour">
-        <img src="images/colour-1.jpg.png" alt="Colour tattoo in Thane by Tiger Skin" loading="lazy" decoding="async">
-        <div class="cap">Colour</div>
-      </div>
-      <div class="tile" data-cat="colour">
-        <img src="images/colour-2.jpg.png" alt="Colour tattoo in Thane by Tiger Skin" loading="lazy" decoding="async">
-        <div class="cap">Colour</div>
-      </div>
-      <div class="tile" data-cat="colour">
-        <img src="images/colour-3.jpg.png" alt="Colour tattoo in Thane by Tiger Skin" loading="lazy" decoding="async">
+        <img src="images/colour-3.jpg.png" alt="Watercolour tattoo Thane Tiger Skin" loading="lazy" decoding="async">
         <div class="cap">Colour</div>
       </div>
       <div class="tile" data-cat="pet">
-        <img src="images/pet-1.jpg.png" alt="Pet portrait tattoo in Thane by Tiger Skin" loading="lazy" decoding="async">
-        <div class="cap">Pet Portraits</div>
-      </div>
-      <div class="tile" data-cat="pet">
-        <img src="images/pet-2.jpg.png" alt="Pet portrait tattoo in Thane by Tiger Skin" loading="lazy" decoding="async">
-        <div class="cap">Pet Portraits</div>
-      </div>
-      <div class="tile" data-cat="pet">
-        <img src="images/pet-3.jpg.png" alt="Pet portrait tattoo in Thane by Tiger Skin" loading="lazy" decoding="async">
+        <img src="images/pet-3.jpg.png" alt="Cat portrait tattoo Thane" loading="lazy" decoding="async">
         <div class="cap">Pet Portraits</div>
       </div>
       <div class="tile" data-cat="religious">
-        <img src="images/religious-1.jpg.png" alt="Religious tattoo in Thane by Tiger Skin" loading="lazy" decoding="async">
-        <div class="cap">Religious &amp; Deity</div>
-      </div>
-      <div class="tile" data-cat="religious">
-        <img src="images/religious-2.jpg.png" alt="Religious tattoo in Thane by Tiger Skin" loading="lazy" decoding="async">
-        <div class="cap">Religious &amp; Deity</div>
-      </div>
-      <div class="tile" data-cat="religious">
-        <img src="images/religious-3.jpg.png" alt="Religious tattoo in Thane by Tiger Skin" loading="lazy" decoding="async">
+        <img src="images/religious-3.jpg.png" alt="Religious tattoo Naupada Thane" loading="lazy" decoding="async">
         <div class="cap">Religious &amp; Deity</div>
       </div>
       <div class="tile" data-cat="fineline">
-        <img src="images/fineline-1.jpg.png" alt="Fine line tattoo in Thane by Tiger Skin" loading="lazy" decoding="async">
+        <img src="images/fineline-3.jpg.png" alt="Minimal fine line tattoo Thane" loading="lazy" decoding="async">
         <div class="cap">Fine Line</div>
       </div>
-      <div class="tile" data-cat="fineline">
-        <img src="images/fineline-2.jpg.png" alt="Fine line tattoo in Thane by Tiger Skin" loading="lazy" decoding="async">
-        <div class="cap">Fine Line</div>
-      </div>
-      <div class="tile" data-cat="fineline">
-        <img src="images/fineline-3.jpg.png" alt="Fine line tattoo in Thane by Tiger Skin" loading="lazy" decoding="async">
-        <div class="cap">Fine Line</div>
-      </div>
-    </div></div>
+
+    </div>
+
+    <div class="gallery-empty" id="galleryEmpty">New work coming soon &mdash; follow us on <a href="https://www.instagram.com/tigerskintattoos/" target="_blank" rel="noopener" style="color:var(--green);text-decoration:none">Instagram</a> for the latest.</div>
+
+    <div style="text-align:center">
+      <a class="ig-link" href="https://www.instagram.com/tigerskintattoos/" target="_blank" rel="noopener">
+        See more on Instagram &#8594;
+      </a>
+    </div>
+
   </div>
-</section><footer>
+</section>
+
+<footer>
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-col">
@@ -145,41 +190,57 @@
       <div class="foot-col">
         <h4>Visit</h4>
         <a href="https://www.google.com/maps/place/Tiger+Skin+Tattoos/@19.1913333,72.968223,17z" target="_blank" rel="noopener">Naupada, Thane West</a>
-        <a href="#">12–9 pm, every day</a>
-        <a href="#">Cash · UPI accepted</a>
+        <a href="#">12-9 pm, every day</a>
+        <a href="#">Cash &middot; UPI accepted</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Tiger Skin Tattoos · Thane</span>
-      <span>Custom tattoos · Realism · Black &amp; Grey · Colour · Pet Portraits · Religious</span>
+      <span>&copy; 2026 Tiger Skin Tattoos &middot; Thane</span>
+      <span>Custom tattoos &middot; Realism &middot; Black &amp; Grey &middot; Colour &middot; Pet Portraits &middot; Religious</span>
     </div>
   </div>
 </footer>
+
 <script>
-  document.querySelectorAll('.filter-btn').forEach(function(btn){
-    btn.addEventListener('click',function(){
-      document.querySelectorAll('.filter-btn').forEach(function(b){b.classList.remove('active')});
+(function(){
+  var btns = document.querySelectorAll('.filter-btn');
+  var tiles = document.querySelectorAll('#gallery .tile');
+  var empty = document.getElementById('galleryEmpty');
+
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      btns.forEach(function(b){b.classList.remove('active')});
       btn.classList.add('active');
-      var f=btn.getAttribute('data-filter');
-      document.querySelectorAll('#gallery .tile').forEach(function(t){
-        if(f==='all'||t.getAttribute('data-cat')===f){t.classList.remove('hide')}else{t.classList.add('hide')}
+      var f = btn.getAttribute('data-filter');
+      var visible = 0;
+      tiles.forEach(function(t){
+        if(f === 'all' || t.getAttribute('data-cat') === f){
+          t.classList.remove('hide');
+          visible++;
+        } else {
+          t.classList.add('hide');
+        }
       });
+      if(visible === 0){ empty.classList.add('show'); } else { empty.classList.remove('show'); }
     });
   });
-</script><script>
-  document.getElementById('menuToggle').addEventListener('click',function(){
-    document.getElementById('navLinks').classList.toggle('show');
-  });
-  document.querySelectorAll('#navLinks a').forEach(function(a){
-    a.addEventListener('click',function(){document.getElementById('navLinks').classList.remove('show')});
-  });
+})();
 </script>
 <script>
-document.querySelectorAll('.gallery .tile img').forEach(function(img){
-  function done(){img.classList.add('ts-loaded');img.closest('.tile').classList.add('ts-done');}
-  if(img.complete&&img.naturalWidth>0) done();
-  else img.addEventListener('load',done);
-  img.addEventListener('error',done);
+document.getElementById('menuToggle').addEventListener('click',function(){
+  document.getElementById('navLinks').classList.toggle('show');
+});
+document.querySelectorAll('#navLinks a').forEach(function(a){
+  a.addEventListener('click',function(){document.getElementById('navLinks').classList.remove('show')});
 });
 </script>
-</body></html>
+<script>
+document.querySelectorAll('.masonry .tile img').forEach(function(img){
+  function done(){img.classList.add('ts-loaded');}
+  if(img.complete && img.naturalWidth > 0) done();
+  else img.addEventListener('load', done);
+  img.addEventListener('error', done);
+});
+</script>
+</body>
+</html>
