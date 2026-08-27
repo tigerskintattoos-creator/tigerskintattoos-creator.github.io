@@ -49,17 +49,31 @@
     </div>
   </div>
 </header>
-<section class="styles" id="styles" style="padding-top:60px;padding-bottom:60px">
+<section class="services-main" id="services" style="padding-top:60px;padding-bottom:60px">
+  <style>
+    .svc-duo{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .svc-card{display:flex;flex-direction:column;gap:10px;padding:32px 28px;border:1px solid rgba(255,255,255,0.1);border-radius:12px;text-decoration:none;color:inherit;transition:border-color .2s,background .2s}
+    .svc-card:hover{border-color:var(--green);background:rgba(255,255,255,0.03)}
+    .svc-num{font-size:11px;letter-spacing:.15em;color:var(--muted);font-family:"Plus Jakarta Sans",sans-serif}
+    .svc-name{font-size:22px;font-weight:700;color:var(--fg)}
+    .svc-desc{font-size:14px;color:var(--muted);line-height:1.6}
+    .svc-link{font-size:13px;color:var(--green);font-weight:600;margin-top:auto}
+    @media(max-width:600px){.svc-duo{grid-template-columns:1fr}}
+  </style>
   <div class="wrap">
-    <div class="sec-eyebrow">What we do</div>
-    <p style="font-size:15px;color:var(--muted);margin:-6px 0 22px;max-width:580px">From realism to religious work, colour to fine line. We work across every style, custom-designed for you.</p>
-    <div class="styles-grid">
-      <a class="style-item" href="portfolio.html?cat=realism"><span class="n">01</span><span class="t">Realism</span></a>
-      <a class="style-item" href="portfolio.html?cat=blackgrey"><span class="n">02</span><span class="t">Black &amp; Grey</span></a>
-      <a class="style-item" href="portfolio.html?cat=colour"><span class="n">03</span><span class="t">Colour</span></a>
-      <a class="style-item" href="portfolio.html?cat=pet"><span class="n">04</span><span class="t">Pet Portraits</span></a>
-      <a class="style-item" href="portfolio.html?cat=religious"><span class="n">05</span><span class="t">Religious &amp; Deity</span></a>
-      <a class="style-item" href="portfolio.html?cat=fineline"><span class="n">06</span><span class="t">Fine Line</span></a>
+    <div class="svc-duo">
+      <a class="svc-card" href="portfolio.html">
+        <span class="svc-num">01</span>
+        <span class="svc-name">Custom Tattoos</span>
+        <span class="svc-desc">Realism, colour, black &amp; grey, fine line, religious &amp; deity, pet portraits. Every piece designed from scratch for you.</span>
+        <span class="svc-link">See the work &#8594;</span>
+      </a>
+      <a class="svc-card" href="piercing-thane.html">
+        <span class="svc-num">02</span>
+        <span class="svc-name">Body Piercing</span>
+        <span class="svc-desc">Ear, nose, navel and more. Sterile equipment, professional technique, clean studio.</span>
+        <span class="svc-link">See piercing &#8594;</span>
+      </a>
     </div>
   </div>
 </section>
