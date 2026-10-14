@@ -489,3 +489,12 @@ nav .brand img{filter:drop-shadow(0 2px 8px rgba(0,0,0,0.45))}
 .studio-photo{aspect-ratio:3/4}
 .client-photos{grid-template-columns:repeat(2,1fr);gap:6px}
 }
+
+/* ===== Mobile fixes for inline two-column layouts and galleries (Oct 2026) ===== */
+@media(max-width:860px){
+  div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr!important;gap:28px!important}
+  .gallery[style*="grid-template-columns"]{grid-template-columns:repeat(2,1fr)!important}
+}
+@media(max-width:640px){
+  .gallery[style*="grid-template-columns"]{grid-template-columns:1fr!important}
+}
